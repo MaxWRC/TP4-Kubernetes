@@ -1,0 +1,31 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: LimitRange
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"LimitRange","metadata":{"annotations":{},"name":"app-limits","namespace":"apps"},"spec":{"limits":[{"default":{"cpu":"200m","memory":"256Mi"},"defaultRequest":{"cpu":"100m","memory":"128Mi"},"max":{"cpu":"1","memory":"1Gi"},"min":{"cpu":"50m","memory":"64Mi"},"type":"Container"}]}}
+    creationTimestamp: "2026-09-17T16:45:43Z"
+    name: app-limits
+    namespace: apps
+    resourceVersion: "4403"
+    uid: 07695df8-e543-4b6e-859d-a7d4e2c37160
+  spec:
+    limits:
+    - default:
+        cpu: 200m
+        memory: 256Mi
+      defaultRequest:
+        cpu: 100m
+        memory: 128Mi
+      max:
+        cpu: "1"
+        memory: 1Gi
+      min:
+        cpu: 50m
+        memory: 64Mi
+      type: Container
+kind: List
+metadata:
+  resourceVersion: ""

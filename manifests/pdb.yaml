@@ -1,0 +1,35 @@
+apiVersion: v1
+items:
+- apiVersion: policy/v1
+  kind: PodDisruptionBudget
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"policy/v1","kind":"PodDisruptionBudget","metadata":{"annotations":{},"name":"wordpress-pdb","namespace":"apps"},"spec":{"minAvailable":2,"selector":{"matchLabels":{"app":"wordpress"}}}}
+    creationTimestamp: "2026-09-17T20:07:24Z"
+    generation: 1
+    name: wordpress-pdb
+    namespace: apps
+    resourceVersion: "17458"
+    uid: 42e483f2-1146-4d8b-8dca-e145004f834d
+  spec:
+    minAvailable: 2
+    selector:
+      matchLabels:
+        app: wordpress
+  status:
+    conditions:
+    - lastTransitionTime: "2026-09-17T21:18:44Z"
+      message: ""
+      observedGeneration: 1
+      reason: SufficientPods
+      status: "True"
+      type: DisruptionAllowed
+    currentHealthy: 3
+    desiredHealthy: 2
+    disruptionsAllowed: 1
+    expectedPods: 3
+    observedGeneration: 1
+kind: List
+metadata:
+  resourceVersion: ""
